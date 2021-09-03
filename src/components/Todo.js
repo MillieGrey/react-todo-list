@@ -6,11 +6,15 @@ import { RiCloseCircleLine } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
 
 function Todo({ todos, completeTodo, removeTodo, editTodo }) {
+  //this sets the default 'edit' properties to null and ""
   const [edit, setEdit] = useState({
     id: null,
     value: "",
   });
 
+  // this does two things
+  //applies the current edit buffer to the todo
+  // resets the 'edit' properties to null and "" after updating the todo
   const submitUpdate = (value) => {
     editTodo(edit.id, value);
     setEdit({
